@@ -7,7 +7,7 @@ def add_value(transaction_amount, last_transaction=[1]):
     blockchain.append([last_transaction, transaction_amount])
 
 def get_transaction_value():
-    user_value = float(input("Enter your transaction amount"))
+    user_value = float(input("Enter your transaction amount: "))
 
     return user_value
 
@@ -15,7 +15,7 @@ def get_user_choice():
 
     user_input = input("Please give your choice here: ")
 
-    return user_input
+    return int(user_input)
 
 def print_block():
 
@@ -23,6 +23,7 @@ def print_block():
         print("Here is your block")
         print(block)
 
+# Returns false if manipulation has been done
 def verify_chain():
     index = 0
     valid = True
@@ -39,6 +40,8 @@ def verify_chain():
         index += 1
     
     return valid
+
+blockchain = []
 
 tx_amount = get_transaction_value()
 add_value(tx_amount)
